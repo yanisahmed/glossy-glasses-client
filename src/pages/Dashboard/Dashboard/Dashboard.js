@@ -5,13 +5,13 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import MyOrders from '../../../components/MyOrders/MyOrders';
-import Payment from '../../../components/Payment/Payment';
-import Review from '../../../components/Review/Review';
 import useAuth from '../../../hooks/useAuth';
-import DashboardHome from '../DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from './AddProduct/AddProduct';
+import DashboardHome from './DashboardHome/DashboardHome';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
+import MyOrders from './MyOrders/MyOrders';
+import Payment from './Payment/Payment';
+import Review from './Review/Review';
 
 const Dashboard = () => {
     const { admin, logOut } = useAuth();

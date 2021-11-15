@@ -56,7 +56,7 @@ const LoginForm = () => {
                         </div>
                     </form>}
                     {isLoading && <span className="flex h-3 w-3">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                        <span className="animate-ping absolute inline-flex h-24 w-3/12 rounded-full bg-purple-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
                     </span>}
                     {loginError && <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">

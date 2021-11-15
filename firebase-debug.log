@@ -1,0 +1,40 @@
+[debug] [2021-11-15T03:48:39.709Z] ----------------------------------------------------------------------
+[debug] [2021-11-15T03:48:39.715Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-11-15T03:48:39.716Z] CLI Version:   9.20.0
+[debug] [2021-11-15T03:48:39.716Z] Platform:      linux
+[debug] [2021-11-15T03:48:39.716Z] Node Version:  v14.18.1
+[debug] [2021-11-15T03:48:39.811Z] Time:          Mon Nov 15 2021 09:48:39 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-11-15T03:48:39.812Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-15T03:48:39.843Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-11-15T03:48:40.063Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-15T03:48:40.064Z] > authorizing via signed-in user (yanisahmed12@gmail.com)
+[debug] [2021-11-15T03:48:40.064Z] [iam] checking project glossy-glasses for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-15T03:48:40.066Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-15T03:48:40.067Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T04:05:27.180Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-15T04:05:27.183Z] > refreshing access token with scopes: []
+[debug] [2021-11-15T04:05:27.184Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T04:05:27.194Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-15T04:05:27.203Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/usr/lib/node_modules/firebase-tools/lib/auth.js:141:12)
+    at refreshTokens (/usr/lib/node_modules/firebase-tools/lib/auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Client.getAccessToken (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:144:23)
+    at async Client.addAuthHeader (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:135:21)
+    at async Client.request (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:93:34)
+    at async Object.getFirebaseProject (/usr/lib/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/usr/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/usr/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/usr/lib/node_modules/firebase-tools/lib/commands/deploy.js:65:9)
+    at async /usr/lib/node_modules/firebase-tools/lib/command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project glossy-glasses. Please make sure the project exists and your account has permission to access it.

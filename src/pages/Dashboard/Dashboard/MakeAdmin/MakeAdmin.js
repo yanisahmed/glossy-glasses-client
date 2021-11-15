@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../hooks/useAuth';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+
+import SectionTitle from '../../../../components/SectionTitle/SectionTitle'
+import useAuth from '../../../../hooks/useAuth';
 
 const MakeAdmin = () => {
-    const { loginError, isLoading, user } = useAuth();
+    const { isLoading } = useAuth();
     const [message, setMessage] = useState('');
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://powerful-sands-79915.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

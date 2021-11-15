@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import AuthProvider from './context/AuthProvider';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard />
             </PrivateRoute>
+            <Route exact path="*">
+              <NotFound />
+            </Route>
           </Switch>
           <Footer />
         </Router>
