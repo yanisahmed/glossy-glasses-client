@@ -43,12 +43,7 @@ const HeaderNavigation = () => {
                                 <Link to="/products" className="md:mr-2 font-medium  hover:bg-red-200 rounded-full py-2 px-3">Products</Link>
                             </li>
 
-                            {user.email && <li className="nav-item">
-                                <Link to="/manage-orders" className="md:mr-2 font-medium hover:bg-red-200 rounded-full py-2 px-3">Manage Order</Link>
-                            </li>}
-                            {user.email && <li className="nav-item">
-                                <Link to="/my-orders" className="md:mr-2 font-medium hover:bg-red-200 rounded-full py-2 px-3">My Order</Link>
-                            </li>}
+
                             {user.email && <li className="nav-item">
                                 <Link to="/dashboard" className="md:mr-2 font-medium hover:bg-red-200 rounded-full py-2 px-3">Dashboard</Link>
                             </li>}

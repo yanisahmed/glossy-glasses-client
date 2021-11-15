@@ -1,3 +1,4 @@
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -13,7 +14,9 @@ const HeaderTop = () => {
                 <div className="container mx-auto flex justify-between py-4 ">
                     <div>
                         {/* <span className="text-white"><SocialIcons></SocialIcons></span> */}
-                        icons
+                        <span> <FontAwesomeIcon icon={faFacebook} className="text-white md:mr-2 text-2xl" /> </span>
+                        <span> <FontAwesomeIcon icon={faTwitter} className="text-white md:mr-2 text-2xl" /> </span>
+                        <span> <FontAwesomeIcon icon={faInstagram} className="text-white md:mr-2 text-2xl" /> </span>
                     </div>
                     <div>
                         {/* <span className="text-white">{!user.displayName ? "Welcome, Guest" : <span>Welcome, {user.displayName}</span>}</span> */}
