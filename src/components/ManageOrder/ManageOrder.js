@@ -1,13 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import Order from '../../../../components/Order/Order';
-import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
-import useAuth from '../../../../hooks/useAuth';
+import Order from '../Order/Order';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
-const MyOrder = () => {
+const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const { user } = useAuth();
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         fetch('https://powerful-sands-79915.herokuapp.com/orders')
             .then(res => res.json())
@@ -18,7 +16,7 @@ const MyOrder = () => {
     }, [orders]);
     return (
         <>
-            <SectionTitle title="My Orders" />
+            <SectionTitle title="Manage Orders" />
             {!loading ? <button type="button" className="bg-rose-600 ..." disabled>
                 <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
                 </svg>
@@ -37,7 +35,7 @@ const MyOrder = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {orders.map(order => order.useremail === user.email && <Order key={order._id} order={order} />)}
+                            {orders.map(order => <Order key={order._id} order={order} />)}
 
                         </tbody>
                     </table>
@@ -48,4 +46,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default ManageOrder;

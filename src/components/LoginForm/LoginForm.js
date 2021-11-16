@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 const LoginForm = () => {
 
 
-    const { signInUsingEmail, singInUsingGoogle, loginError, isLoading, user } = useAuth();
+    const { signInUsingEmail, singInUsingGoogle, loginError, isLoading } = useAuth();
 
     const { register, handleSubmit } = useForm();
 

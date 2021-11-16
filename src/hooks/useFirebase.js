@@ -104,7 +104,7 @@ const useFirebase = () => {
         //email:email, displayName: displayName
         const user = { email, displayName };
         console.log("user:", user);
-        fetch('https://powerful-sands-79915.herokuapp.com/', {
+        fetch('https://powerful-sands-79915.herokuapp.com/users', {
             method: method,
             headers: {
                 'Content-Type': 'application/json'

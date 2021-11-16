@@ -2,6 +2,7 @@ import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -24,7 +25,8 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
+            <SectionTitle title="Add Product" />
+            <form className="w-full max-w-lg mt-8" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full  mb-6 md:mb-0">
                         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
@@ -59,7 +61,7 @@ const AddProduct = () => {
                 </div>
                 <button
                     className="
-                        bg-yellow-500
+                        bg-blue-500
                         text-white
                         active:bg-purple-600
                         font-bold

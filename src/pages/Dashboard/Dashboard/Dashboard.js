@@ -5,6 +5,7 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
+import ManageOrder from '../../../components/ManageOrder/ManageOrder';
 import useAuth from '../../../hooks/useAuth';
 import AddProduct from './AddProduct/AddProduct';
 import DashboardHome from './DashboardHome/DashboardHome';
@@ -340,7 +341,7 @@ const Dashboard = () => {
                             <MyOrders />
                         </Route>
                         <Route path={`${path}/manage-orders`}>
-                            <AddProduct />
+                            <ManageOrder />
                         </Route>
                         <Route path={`${path}/review`}>
                             <Review />
