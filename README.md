@@ -8,6 +8,7 @@ Live Link [Glossy Glasses](https://glossy-glasses.web.app/).
 - *Firebase Authentication*
 - *User Privilliges*
 - *Order Placement*
+- *Admin Dashboard*
 
 ## Website Developer Tools
 - *React*

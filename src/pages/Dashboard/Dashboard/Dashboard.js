@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Switch,
     Route,
@@ -10,15 +10,28 @@ import useAuth from '../../../hooks/useAuth';
 import AddProduct from './AddProduct/AddProduct';
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageProducts from './ManageProducts.js/ManageProducts';
 import MyOrders from './MyOrders/MyOrders';
 import Payment from './Payment/Payment';
 import Review from './Review/Review';
 
 const Dashboard = () => {
     const { admin, logOut } = useAuth();
+    const [loading, setLoading] = useState(false);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://powerful-sands-79915.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                setLoading(true);
+            });
+    }, [products]);
+
     const [showMobile, setShowMobile] = useState(false)
     let { path, url } = useRouteMatch();
-    console.log(path, url);
+
 
     const sidebarHandler = () => {
         if (!showMobile) {
@@ -53,7 +66,7 @@ const Dashboard = () => {
                                 </svg>
                                 <span className="text-sm  ml-2"><Link to={`${url}`}>Dashboard</Link></span>
                             </div>
-                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">5</div>
+
                         </li>
                         {admin && <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
                             <div className="flex items-center">
@@ -63,7 +76,7 @@ const Dashboard = () => {
                                 </svg>
                                 <span className="text-sm  ml-2"><Link to={`${url}/add-product`}>Add Product</Link></span>
                             </div>
-                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">8</div>
+
                         </li>}
 
                         {admin && <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -107,8 +120,9 @@ const Dashboard = () => {
                                     <polyline points="4 12 12 16 20 12" />
                                     <polyline points="4 16 12 20 20 16" />
                                 </svg>
-                                <span className="text-sm  ml-2"><Link to={`${url}/manage-orders`}>All Products</Link></span>
+                                <span className="text-sm  ml-2"><Link to={`${url}/manage-products`}>Manage Products</Link></span>
                             </div>
+                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">{products.length}</div>
                         </li>}
 
                         {!admin && <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -225,7 +239,7 @@ const Dashboard = () => {
                                 </svg>
                                 <span className="text-sm  ml-2"><Link to={`${url}`}>Dashboard</Link></span>
                             </div>
-                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">5</div>
+
                         </li>
                         <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
                             <div className="flex items-center">
@@ -235,7 +249,7 @@ const Dashboard = () => {
                                 </svg>
                                 <span className="text-sm  ml-2"><Link to={`${url}add-product`}>Add Product</Link></span>
                             </div>
-                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">8</div>
+
                         </li>
 
                         {admin && <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -279,8 +293,9 @@ const Dashboard = () => {
                                     <polyline points="4 12 12 16 20 12" />
                                     <polyline points="4 16 12 20 20 16" />
                                 </svg>
-                                <span className="text-sm  ml-2"><Link to={`${url}/all-products`}>All Products</Link></span>
+                                <span className="text-sm  ml-2"><Link to={`${url}/manage-products`}>Manage Products</Link></span>
                             </div>
+                            <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">{products.length}</div>
                         </li>}
                         {!admin && <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
                             <div className="flex items-center">
@@ -326,7 +341,7 @@ const Dashboard = () => {
 
                     <Switch>
                         <Route exact path={path}>
-                            <DashboardHome />
+                            <DashboardHome products={products} />
                         </Route>
                         <Route path={`${path}/make-admin`}>
                             <MakeAdmin />
@@ -334,8 +349,8 @@ const Dashboard = () => {
                         <Route path={`${path}/add-product`}>
                             <AddProduct />
                         </Route>
-                        <Route path={`${path}/all-products`}>
-                            <AddProduct />
+                        <Route path={`${path}/manage-products`}>
+                            <ManageProducts />
                         </Route>
                         <Route path={`${path}/my-orders`}>
                             <MyOrders />

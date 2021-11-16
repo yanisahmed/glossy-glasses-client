@@ -1,6 +1,7 @@
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomeSlider.css'
 
 const HomeSlider = () => {
@@ -25,7 +26,12 @@ const HomeSlider = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'Top'
                     }}
-                ></div>
+                >
+                    <div className="absolute left-24 bottom-24">
+                        <h3 className="text-5xl mb-4 font-bold">Get 30% off</h3>
+                        <Link to="/products"><button className="bg-blue-900 hover:bg-yellow-300 text-white px-4 py-2 rounded">Purchase Now</button></Link>
+                    </div>
+                </div>
                 <label
                     htmlFor="carousel-3"
                     className="
@@ -102,7 +108,12 @@ const HomeSlider = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'Top'
                     }}
-                ></div>
+                >
+                    <div className="absolute right-24 bottom-24">
+                        <h3 className="text-5xl mb-4 font-bold text-white">Get 30% off</h3>
+                        <Link to="/products"><button className="bg-blue-900 hover:bg-yellow-300 text-white px-4 py-2 rounded">Purchase Now</button></Link>
+                    </div>
+                </div>
                 <label
                     htmlFor="carousel-1"
                     className="
@@ -177,7 +188,12 @@ const HomeSlider = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'Top'
                     }}
-                ></div>
+                >
+                    <div className="absolute right-24 bottom-24">
+                        <h3 className="text-5xl mb-4 font-bold text-white">Get 30% off</h3>
+                        <Link to="/products"><button className="bg-blue-900 hover:bg-yellow-300 text-white px-4 py-2 rounded">Purchase Now</button></Link>
+                    </div>
+                </div>
                 <label
                     htmlFor="carousel-2"
                     className="
