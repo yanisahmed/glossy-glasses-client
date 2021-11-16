@@ -16,7 +16,7 @@ const ProductDetails = () => {
     return (
         <>
             <section className="section-title mt-8 mb-4">
-                <h3 className="uppercase text-center font-semibold text-3xl">Room Details</h3>
+                <h3 className="uppercase text-center font-semibold text-3xl">Review Details</h3>
 
             </section>
             <section className="my-8">

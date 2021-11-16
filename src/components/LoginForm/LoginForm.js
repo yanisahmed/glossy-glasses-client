@@ -28,7 +28,7 @@ const LoginForm = () => {
 
     return (
         <div className="my-4">
-            <SectionTitle title="Login Form" />
+            <SectionTitle title="Login" />
             <div className="md:flex  justify-evenly items-center" style={{ height: '400px' }}>
                 <div className="w-full max-w-xs">
                     {!isLoading && <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

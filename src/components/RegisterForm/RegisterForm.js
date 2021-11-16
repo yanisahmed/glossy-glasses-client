@@ -23,7 +23,7 @@ const RegisterForm = () => {
     }
     return (
         <div className="my-4">
-            <SectionTitle title="Registration Form" />
+            <SectionTitle title="Register" />
             <div className="md:flex  justify-evenly items-center mt-4" style={{ height: '400px' }}>
                 <div className="w-full max-w-xs">
                     {!isLoading && <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

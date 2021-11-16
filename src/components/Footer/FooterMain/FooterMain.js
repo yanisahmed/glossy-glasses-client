@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const FooterMain = () => {
     const location = useLocation();
@@ -19,19 +20,20 @@ const FooterMain = () => {
                             <div>
                                 <h3 className="list-title text-white font-medium">About Us</h3>
                                 <ul className="mt-4">
-                                    <li className="text-white">My Orders</li>
+                                    <li className="text-white">Contact</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 className="list-title text-white font-medium">Services</h3>
                                 <ul className="mt-4">
-                                    <li className="text-white">My Orders</li>
+                                    <Link to="/products"><li className="text-white">Products</li></Link>
                                 </ul>
                             </div>
                             <div>
                                 <h3 className="list-title text-white font-medium">My Account</h3>
                                 <ul className="mt-4">
-                                    <li className="text-white">My Orders</li>
+                                    <Link to="/login"><li className="text-white">Login</li></Link>
+                                    <Link to="/register"><li className="text-white">Login</li></Link>
                                 </ul>
                             </div>
                         </div>
