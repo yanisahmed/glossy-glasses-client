@@ -3,12 +3,10 @@
 Live Link [Glossy Glasses](https://glossy-glasses.web.app/).
 
 ## Website Features
-- *Mobile Responsive*
-- *Desktop Version*
-- *Firebase Authentication*
-- *User Privilliges*
-- *Order Placement*
-- *Admin Dashboard*
+- *Ecommerce functionality, user privileges, login/registration authentication*
+- *Admin dashboard, admin can manage products, REST API*
+- *User can manage, place order and register as well. Stored data to database*
+
 
 ## Website Developer Tools
 - *React*
